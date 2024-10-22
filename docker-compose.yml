@@ -1,0 +1,12 @@
+services:
+  webapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NODEJS_VERSION: ${NODEJS_VERSION}
+    container_name: dockernodeapp
+    ports:
+      - ${WEB_PORT}:3000
+    volumes:
+      - ./app:/app
